@@ -1739,6 +1739,16 @@
   "resolved" "https://registry.npmmirror.com/@xmldom/xmldom/-/xmldom-0.7.5.tgz"
   "version" "0.7.5"
 
+"@zegocloud/zego-uikit-prebuilt-call-rn@^1.2.1":
+  "integrity" "sha512-rC6xhxknBBgB6lJY3EG1jtBoYAW6Ngv/5NtWX3Twl8dhtjc6lVcHWD9vyJD1Drh6f+YgXPBdn5Y+twGu1Got2w=="
+  "resolved" "https://registry.npmjs.org/@zegocloud/zego-uikit-prebuilt-call-rn/-/zego-uikit-prebuilt-call-rn-1.2.1.tgz"
+  "version" "1.2.1"
+
+"@zegocloud/zego-uikit-rn@^1.2.0":
+  "integrity" "sha512-sMYCKIEFk7ZsM6L384yybESgQXVt33vCVbS9B2eXrTT056pH2luoS3ywGYdbrr6cXnkBHeuyr4SMDlUcMSMwIw=="
+  "resolved" "https://registry.npmjs.org/@zegocloud/zego-uikit-rn/-/zego-uikit-rn-1.2.0.tgz"
+  "version" "1.2.0"
+
 "abab@^2.0.3", "abab@^2.0.5":
   "integrity" "sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA=="
   "resolved" "https://registry.npmjs.org/abab/-/abab-2.0.6.tgz"
@@ -6214,7 +6224,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@*", "prop-types@^15.6.2", "prop-types@^15.7.2", "prop-types@^15.8.1":
+"prop-types@*", "prop-types@^15.6.0", "prop-types@^15.6.2", "prop-types@^15.7.2", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -6270,6 +6280,13 @@
   "integrity" "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg=="
   "resolved" "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
   "version" "1.2.1"
+
+"react-delegate-component@^1.0.0":
+  "integrity" "sha512-xdpNHPoiBQF0Ob4z5EqQUEK2sBjy0ooXe9xqsLlaA19l5dUASu3mIkfXMdBmMLCSfByPa0NluEN6BUDaI5EnlQ=="
+  "resolved" "https://registry.npmjs.org/react-delegate-component/-/react-delegate-component-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "prop-types" "^15.6.0"
 
 "react-devtools-core@^4.23.0":
   "integrity" "sha512-jbX8Yqyq4YvFEobHyXVlGaH0Cs/+EOdb3PL911bxaR5BnzbB5TE4RFHC1iOgT4vRH3VxIIrVQ7lR9vsiFFCYCA=="

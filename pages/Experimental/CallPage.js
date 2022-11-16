@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
 import {
   Button,
@@ -18,8 +19,10 @@ import ZegoExpressEngine, {
   ZegoScenario,
   ZegoUpdateType,
 } from 'zego-express-engine-reactnative';
-import {ZegoExpressManager} from '../ZegoExpressManager';
-import {ZegoMediaOptions} from '../ZegoExpressManager/index.entity';
+import {ZegoExpressManager} from '../../ZegoExpressManager';
+import {ZegoMediaOptions} from '../../ZegoExpressManager/index.entity';
+
+import ZegoUIKitPrebuiltCall, { ONE_ON_ONE_VIDEO_CALL_CONFIG } from '@zegocloud/zego-uikit-prebuilt-call-rn';
 
 const styles = StyleSheet.create({
   // ZegoEasyExample
@@ -108,6 +111,23 @@ const styles = StyleSheet.create({
     width: 35,
     height: 35,
   },
+  statusBarContainer:{
+    position:'absolute',
+    top: 20,
+    left: 0,
+    height: "auto",
+    width: "100%",
+  },
+  statusBar:{
+    backgroundColor:'black',
+    width:"80%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    padding:10,
+    borderRadius:50,
+    justifyContent: "center",
+    alignItems: "center",
+  }
 });
 
 export default class CallPage extends Component {
@@ -130,11 +150,6 @@ export default class CallPage extends Component {
     this.roomID = props.route.params.roomID;
     this.userID = this.appData.userID;
     this.userName = props.route.params.userName;
-  
-    this.state ={
-      status:""
-    }
-
   }
   state = {
     cameraEnable: true,
@@ -295,7 +310,7 @@ export default class CallPage extends Component {
   render() {
     return (
       <View style={[styles.callPage, styles.showPage]}>
-        <View style={[styles.preview, styles.showPreviewView]}>
+        {/* <View style={[styles.preview, styles.showPreviewView]}>
           <ZegoTextureView
             ref={this.localViewRef}
             // @ts-ignore
@@ -306,29 +321,52 @@ export default class CallPage extends Component {
           <ZegoTextureView
             ref={this.remoteViewRef}
             // @ts-ignore
-            style={.playView}
-          />styles
-        </View>
-        <View style={styles.btnCon}>
+            style={styles.playView}
+          />
+        </View> */}
+         <ZegoUIKitPrebuiltCall
+                appID={this.appID}
+                appSign={"a789acace5835cad4d1281572e60e66e86cd27c4fbd837c5588c565364deac5d"}
+                userID={this.userID}
+                userName={this.userName}
+                callID={this.roomID}
+
+                config={{
+                    ...ONE_ON_ONE_VIDEO_CALL_CONFIG,
+                    onOnlySelfInRoom: () => {this.props.navigation.navigate('HomePage')},
+                    onHangUp: () => {this.props.navigation.navigate('HomePage')},
+                    //\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                    layout:{
+                        // mode: ZegoLayoutMode.pictureInPicture,
+                        config: {
+                            showMyViewWithVideoOnly: false,
+                            isSmallViewDraggable: true,
+                            switchLargeOrSmallViewByClick: true,
+                        }
+                    }
+                    ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+                }}
+            />
+        {/* <View style={styles.btnCon}>
           <TouchableOpacity
             style={styles.micCon}
             onPress={this.enableMic.bind(this)}>
-            <Image style={styles.image} source={require('../img/mic.png')} />
+            <Image style={styles.image} source={require('../../img/mic.png')} />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.phoneCon}
             onPress={this.leaveRoom.bind(this)}>
             <Image
               style={styles.phoneImage}
-              source={require('../img/phone.png')}
+              source={require('../../img/phone.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.cameraCon}
             onPress={this.enableCamera.bind(this)}>
-            <Image style={styles.image} source={require('../img/camera.png')} />
+            <Image style={styles.image} source={require('../../img/camera.png')} />
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     );
   }

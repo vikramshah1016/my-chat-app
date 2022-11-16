@@ -4,7 +4,8 @@ import {
   createNavigationContainerRef,
   StackActions,
 } from '@react-navigation/native';
-import CallPage from './CallPage';
+// import CallPage from './CallPage';
+import CallPage from './Experimental/CallPage';
 import HomePage from './HomePage';
 
 const Stack = createNativeStackNavigator();
@@ -30,7 +31,11 @@ class AppNavigation extends Component {
 
   render() {
     return (
-      <Stack.Navigator initialRouteName="HomePage">
+      <Stack.Navigator
+        initialRouteName="HomePage"
+        screenOptions={{
+          headerShown: false,
+        }}>
         <Stack.Screen
           name="HomePage"
           component={HomePage}

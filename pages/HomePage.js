@@ -98,6 +98,9 @@ export default class HomePage extends Component {
   // Post a request to backend service will the targetUserID
   // Because every device(FCM token) has been binding with a specific user id at APP launched,
   // so the server can find out who you are trying to call
+  
+
+
   async sendCallInvite(roomID) {
     const requestOptions = {
       method: 'POST',
@@ -114,6 +117,7 @@ export default class HomePage extends Component {
     const reps = await fetch(`${this.serverUrl}/call_invite`, requestOptions);
     console.log('Send call invite reps: ', reps);
   }
+
   jumpToCallPage(roomID) {
     this.props.navigation.navigate('CallPage', {
       appData: this.appData,
@@ -121,6 +125,7 @@ export default class HomePage extends Component {
       userName: this.currentUserName,
     });
   }
+  
   // Start call by click the call button
   startCall() {
     if (this.state.targetUserID == '') {
